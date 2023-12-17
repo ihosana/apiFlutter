@@ -21,6 +21,7 @@ class Pokemon {
 
   // Método estático para buscar um Pokémon da API usando um ID
   static Future<Pokemon> fetchPokemon(int id) async {
+    
     final response = await http.get(Uri.parse('https://pokeapi.co/api/v2/pokemon/$id'));
 
     if (response.statusCode == 200) {
@@ -48,7 +49,6 @@ class Pokemon {
       throw Exception('Failed to load pokemons');
     }
   }
-
 }
 
 
